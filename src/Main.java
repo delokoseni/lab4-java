@@ -76,5 +76,8 @@ public class Main {
         System.out.println("\n" + "sal3:");
         sal3.output();
         System.out.println("Зарплата emp1 при sal3 " + emp1.getsalary(sal3));
+        Employee.printcounter();
+        Employee.minuscounter();
+        Employee.minuscounter(2);
     }
 }
