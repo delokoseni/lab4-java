@@ -56,7 +56,7 @@ public class Main {
         System.out.println("Почасовая оплата jt1 выше/ниже 120 на " + jt1.comparisonhc(norm) + " процентов");
         Employee emp1 = new Employee();
         Employee emp2 = new Employee(10);
-        Employee emp3 = new Employee(11, exp1, h1, jt1);
+        Employee emp3 = new Employee(exp1, h1, jt1);
         emp1.input();
         System.out.println("\n" + "emp1:");
         emp1.output();
