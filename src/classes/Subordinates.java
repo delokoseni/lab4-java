@@ -1,0 +1,93 @@
+package classes;
+import java.util.Scanner;
+
+public class Subordinates {
+    /** Кол-во подчиненных **/
+    private int amount;
+    /** Average seniority of subordinates - средний стаж подчиненных **/
+    private float asos;
+
+    /** Конструктор класса со всеми параметрами **/
+    public Subordinates(int amount, float asos){
+        if(amount >= 0)
+            this.amount = amount;
+        else {
+            System.out.println("Указано недопустимое значение amount.");
+            this.amount = 0;
+        }
+        if(asos >= 0)
+            this.asos = asos;
+        else {
+            System.out.println("Указано недопустимое значение asos.");
+            this.asos = 0;
+        }
+    }
+
+    /** Конструктор класса с одним параметром **/
+    public Subordinates(int allfields){
+        if(allfields >= 0) {
+            amount = allfields;
+            asos = allfields;
+        }
+        else {
+            System.out.println("Указано недопустимое значение allfields.");
+            amount = 0;
+            asos = 0;
+        }
+    }
+
+    /** Конструктор класса без параметров **/
+    public Subordinates(){
+        amount = 0;
+        asos = 0;
+    }
+
+    /** Метод подсчета среднего стажа **/
+    public float averageseniority(int number){
+        Scanner inp = new Scanner(System.in);
+        float avesen = 0;
+        int[] arr = new int[2*number];
+        System.out.println("Вводите сначала целое число лет стажа, затем месяцы!" + "\n");
+        for (int i = 0; i < 2 * number; i++) {
+            arr[i] = inp.nextInt();
+        }
+        for (int i = 0; i < 2 * number; i+=2) {
+            avesen += arr[i];
+            avesen += (float)arr[i+1] / 12;
+        }
+        avesen = avesen / number;
+        return avesen;
+    }
+
+    /** Метод ввода **/
+    public void input(){
+        Scanner inp = new Scanner(System.in);
+        int YesNo;
+        System.out.println("Введите количество подчиненных сотрудника: ");
+        amount = inp.nextInt();
+        if (amount > 0) {
+            System.out.println("Вы знаете средний стаж подчиненных? 1 - да, 0 - нет");
+            YesNo = inp.nextByte();
+            if(YesNo == 1){
+                System.out.println("Введите средний стаж подчиненных сотрудника: ");
+                asos = inp.nextFloat();
+            }
+            else{
+                asos = this.averageseniority(this.amount);
+            }
+        }
+        else
+            asos = 0;
+    }
+
+    /** Метод вывода **/
+    public void output(){
+        System.out.println("Кол-во подчиненных: " + amount);
+        System.out.println("Средний стаж подчиненных: " + asos);
+    }
+
+    /** Метод возвращающий количество полчиненных **/
+    public int getamount(){
+        return amount;
+    }
+}
