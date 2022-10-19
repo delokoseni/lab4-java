@@ -59,15 +59,22 @@ public class Subordinates {
         return avesen;
     }
 
+    /** Метод установки значений **/
+    public void set(Subordinates s){
+        this.amount = s.amount;
+        this.asos = s.asos;
+    }
+
     /** Метод ввода **/
     public void input(){
         Scanner inp = new Scanner(System.in);
-        int YesNo;
+        int YesNo, amount;
+        float asos;
         System.out.println("Введите количество подчиненных сотрудника: ");
         amount = inp.nextInt();
         if (amount > 0) {
             System.out.println("Вы знаете средний стаж подчиненных? 1 - да, 0 - нет");
-            YesNo = inp.nextByte();
+            YesNo = inp.nextInt();
             if(YesNo == 1){
                 System.out.println("Введите средний стаж подчиненных сотрудника: ");
                 asos = inp.nextFloat();
@@ -78,6 +85,8 @@ public class Subordinates {
         }
         else
             asos = 0;
+        Subordinates s = new Subordinates(amount, asos);
+        this.set(s);
     }
 
     /** Метод вывода **/
