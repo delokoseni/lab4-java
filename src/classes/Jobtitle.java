@@ -42,14 +42,26 @@ public class Jobtitle {
         subs = new Subordinates();
     }
 
+    /** Метод установки значений **/
+    public void set(Jobtitle j){
+        this.jtitle = j.jtitle;
+        this.hourlycost = j.hourlycost;
+        this.subs.set(j.subs);
+    }
+
     /** Метод ввода класса **/
     public void input(){
+        String jtitle;
+        int hourlycost;
+        Subordinates subs = new Subordinates();
         Scanner inp = new Scanner(System.in);
         System.out.println("Введите должность: ");
         jtitle = inp.nextLine();
         System.out.println("Введите стоимость часа работы: ");
         hourlycost = inp.nextInt();
         subs.input();
+        Jobtitle j = new Jobtitle(jtitle, hourlycost, subs);
+        this.set(j);
     }
 
     /** Метод вывода класса **/
