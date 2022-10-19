@@ -81,9 +81,20 @@ public class Salary {
         subsstatus = false;
     }
 
+    /** Метод установки значений **/
+    public void set(Salary salary){
+        this.overtimecost = salary.overtimecost;
+        this.weekendcost = salary.weekendcost;
+        this.exppercent = salary.exppercent;
+        this.subspercent = salary.subspercent;
+        this.expstatus = salary.expstatus;
+        this.subsstatus = salary.subsstatus;
+    }
+
     /** Метод ввода **/
     public void input(){
-        int a;
+        int a, overtimecost, weekendcost, exppercent = 0, subspercent = 0;
+        boolean expstatus = false, subsstatus = false;
         Scanner inp = new Scanner(System.in);
         System.out.println("На сколько процентов увеличивать почасовую оплату сверхурочных: ");
         overtimecost = inp.nextInt();
@@ -103,7 +114,8 @@ public class Salary {
             subspercent = inp.nextInt();
             subsstatus = true;
         }
-
+        Salary salary = new Salary(overtimecost, weekendcost, exppercent, subspercent, expstatus, subsstatus);
+        this.set(salary);
     }
 
     /** Метод вывода **/

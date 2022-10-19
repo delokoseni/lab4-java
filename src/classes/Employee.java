@@ -22,17 +22,15 @@ public class Employee {
 
     /** Конструктор класса с одним параметром **/
     public Employee(int allfields){
+        counter++;
+        id = counter;
         if(allfields >= 0) {
-            counter++;
-            id = counter;
             exp = new Experience(allfields);
             hour = new Hours(allfields);
             jt = new Jobtitle(allfields);
         }
         else{
             System.out.println("Указано недопустимое значение allfields.");
-            counter++;
-            id = counter;
             exp = new Experience();
             hour = new Hours();
             jt = new Jobtitle();
