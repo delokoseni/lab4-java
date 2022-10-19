@@ -53,15 +53,25 @@ public class Hours {
         weekends = 0;
     }
 
+    /** Метод установки значений **/
+    public void set(Hours h){
+        this.normal = h.normal;
+        this.overtime = h.overtime;
+        this.weekends = h.weekends;
+    }
+
     /** Метод ввода **/
     public void input(){
+        int norm, over, week;
         Scanner inp = new Scanner(System.in);
         System.out.println("Введите кол-во отработанных за месяц часов по графику: ");
-        normal = inp.nextInt();
+        norm = inp.nextInt();
         System.out.println("Введите кол-во сверхурочных часов: ");
-        overtime = inp.nextInt();
+        over = inp.nextInt();
         System.out.println("Введите кол-во отработанных за месяц часов в выходные: ");
-        weekends = inp.nextInt();
+        week = inp.nextInt();
+        Hours h = new Hours(norm, over, week);
+        this.set(h);
     }
 
     /** Метод вывода **/
