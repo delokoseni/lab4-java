@@ -59,8 +59,16 @@ public class Experience {
         System.out.println("Стаж (кол-во лет в декретном отпуске): " + maternityleave);
     }
 
+    /** Метод установки значений **/
+    public void set(Experience e){
+        this.army = e.army;
+        this.maternityleave = e.maternityleave;
+        this.workingyears = e.workingyears;
+    }
+
     /** Метод ввода **/
     public void input(){
+        int workingyears, army, maternityleave;
         Scanner inp = new Scanner(System.in);
         System.out.println("Введите кол-во реально отработанных лет: ");
         workingyears = inp.nextInt();
@@ -68,6 +76,8 @@ public class Experience {
         army = inp.nextInt();
         System.out.println("Введите кол-во лет в декретном отпуске: ");
         maternityleave = inp.nextInt();
+        Experience e = new Experience(workingyears, army, maternityleave);
+        this.set(e);
     }
 
     /** Метод возвращающий совокупный стаж **/
