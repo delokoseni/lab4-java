@@ -46,7 +46,6 @@ public class Main {
         Jobtitle jt1 = new Jobtitle();
         Jobtitle jt2 = new Jobtitle(over);
         Jobtitle jt3 = new Jobtitle(str, over, sub1);
-        jt3.editjtitle("Менеджер", "Старший");
         jt1.input();
         System.out.println("\n" + "jt1:");
         jt1.output();
@@ -57,7 +56,24 @@ public class Main {
         System.out.println("Почасовая оплата jt1 выше/ниже 120 на " + jt1.comparisonhc(norm) + " процентов");
         Employee emp1 = new Employee();
         Employee emp2 = new Employee(10);
-        Employee emp3 = new Employee(exp1, h1, jt1);
+        Employee emp3 = new Employee(exp1, h1, jt3);
+        Employee[] arr = new Employee[3];
+        String jobt1 = "Менеджер";
+        String jobt2 = "Менеджер по закупкам";
+        String jobt3 = "Менеджер по менеджерам";
+        Jobtitle a1 = new Jobtitle(jobt1, over, sub1);
+        Jobtitle a2 = new Jobtitle(jobt2, over, sub1);
+        Jobtitle a3 = new Jobtitle(jobt3, over, sub1);
+        arr[0] = new Employee(exp1, h1, a1);
+        arr[1] = new Employee(exp1, h1, a2);
+        arr[2] = new Employee(exp1, h1, a3);
+        for(int i = 0; i < 3; i++){
+            arr[i].editjtitle("Менеджер", "Старший");
+        }
+        for(int i = 0; i < 3; i++){
+            arr[i].output();
+            System.out.println();
+        }
         emp1.input();
         System.out.println("\n" + "emp1:");
         emp1.output();

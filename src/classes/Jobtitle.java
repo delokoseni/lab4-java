@@ -85,11 +85,12 @@ public class Jobtitle {
         this.jtitle = "";
         for(String word : words) {
             if(word.equals(jtitle)) {
-                this.jtitle = sb.append(add).toString();
-                this.jtitle = sb.append(" ").toString();
+                sb.append(add);
+                sb.append(" ");
             }
-            this.jtitle = sb.append(word).toString();
-            this.jtitle = sb.append(" ").toString();
+            sb.append(word);
+            sb.append(" ");
         }
+        this.jtitle = sb.toString();
     }
 }

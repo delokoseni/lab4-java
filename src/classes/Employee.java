@@ -86,9 +86,15 @@ public class Employee {
         counter--;
         System.out.println("Количество сотрудников уменьшено на 1.");
     }
+    /** Метод уменьшения количества сотрудников **/
     public static void minuscounter(int number){
         int x = counter;
         counter = counter - number;
         System.out.println("Количество сотрудников уменьшено c " + x + " до " + counter);
+    }
+
+    /** Метод обращения к методу внутреннего класса **/
+    public void editjtitle(String jtitle, String add){
+        jt.editjtitle(jtitle, add);
     }
 }
