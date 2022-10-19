@@ -77,4 +77,19 @@ public class Jobtitle {
     public int getamount(){
         return subs.getamount();
     }
+
+    /** Метод для редактирования должности **/
+    public void editjtitle(String jtitle, String add){
+        StringBuilder sb = new StringBuilder();
+        String[] words = this.jtitle.split(" ");
+        this.jtitle = "";
+        for(String word : words) {
+            if(word.equals(jtitle)) {
+                this.jtitle = sb.append(add).toString();
+                this.jtitle = sb.append(" ").toString();
+            }
+            this.jtitle = sb.append(word).toString();
+            this.jtitle = sb.append(" ").toString();
+        }
+    }
 }

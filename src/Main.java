@@ -42,10 +42,11 @@ public class Main {
         sub2.output();
         System.out.println("\n" + "sub3:");
         sub3.output();
-        String str = "Менеджер";
+        String str = "Менеджер по продажам";
         Jobtitle jt1 = new Jobtitle();
         Jobtitle jt2 = new Jobtitle(over);
         Jobtitle jt3 = new Jobtitle(str, over, sub1);
+        jt3.editjtitle("Менеджер", "Старший");
         jt1.input();
         System.out.println("\n" + "jt1:");
         jt1.output();
